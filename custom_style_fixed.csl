@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Custom Author-Initials Style</title>
+    <id>http://www.zotero.org/styles/custom-author-initials</id>
+    <link href="http://www.zotero.org/styles/custom-author-initials" rel="self"/>
+    <author>
+      <name>Your Name</name>
+      <email>your.email@example.com</email>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2025-04-16T11:04:33+02:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author" delimiter=", ">
+      <name and="text" initialize-with="." name-as-sort-order="all"/>
+      <et-al term="et-al" font-style="italic"/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" suffix=". "/>
+  </macro>
+
+  <macro name="container-title">
+    <text variable="container-title" font-style="italic"/>
+  </macro>
+
+  <macro name="volume-issue">
+    <group>
+      <text variable="volume"/>
+      <text variable="issue" prefix=" (" suffix=")"/>
+    </group>
+  </macro>
+
+  <macro name="pages">
+    <text variable="page" prefix=", " suffix=""/>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year" prefix=" (" suffix=")"/>
+    </date>
+  </macro>
+
+  <citation>
+    <layout prefix="[" suffix="]" delimiter="; ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout suffix=".">
+      <group delimiter=" ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text macro="container-title"/>
+        <text macro="volume-issue"/>
+        <text macro="pages"/>
+        <text macro="year"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
